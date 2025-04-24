@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Contato</title>
+  <link rel="stylesheet" href="../css/agenda.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Editar Contato</h1>
+
+    <form method="POST" id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Digite o email" required>
+
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" placeholder="Digite a idade" required>
+
+      <button type="submit" id="adicionar">Salvar</button>
+    </form>
+
+    <a href="agenda.html" id="voltar">Voltar para a página inicial</a>
+    <div id="mensagem"></div>
+  </div>
+
+  <script src="../js/editar.js" defer></script>
+</body>
+</html>
