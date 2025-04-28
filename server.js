@@ -11,13 +11,13 @@ app.use(express.json());
 // Criar um usuário
 app.post('/usuarios', async (req, res) => {
   try {
-    const { name, email, age } = req.body;
+    const { name, email, phone } = req.body; // Alterado de "age" para "phone"
 
     const novoUsuario = await prisma.user.create({
       data: {
         name,
         email,
-        age
+        phone // Alterado aqui também
       }
     });
 
@@ -42,12 +42,12 @@ app.get('/usuarios', async (req, res) => {
 // Atualizar um usuário
 app.put('/usuarios/:id', async (req, res) => {
   try {
-    const { name, email, age } = req.body;
+    const { name, email, phone } = req.body; // Alterado de "age" para "phone"
     const { id } = req.params;
 
     const usuarioAtualizado = await prisma.user.update({
       where: { id },
-      data: { name, email, age }
+      data: { name, email, phone } // Alterado aqui também
     });
 
     res.status(200).json(usuarioAtualizado);
@@ -75,7 +75,6 @@ app.get('/usuarios/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor.' });
   }
 });
-
 
 // Deletar um usuário
 app.delete('/usuarios/:id', async (req, res) => {
