@@ -16,10 +16,10 @@ fetch('http://localhost:3000/usuarios')
         <h3>${usuario.name}</h3>
         <p><strong>Email:</strong> ${usuario.email}</p>
         <p><strong>Idade:</strong> ${usuario.age}</p>
-        <a href="editar.html?id=${usuario.id}" style="color: red; margin-right: 10px;">Editar</a>
+        <a href="editar.html?id=${usuario.id}" style="color: white; margin-right: 10px;">Editar</a>
         <button class="btn-excluir" data-id="${usuario.id}" style="background-color: red; color: white;">Excluir</button>
-      `;
-
+ `;
+ 
       // Botão de excluir com confirmação
       const btnExcluir = card.querySelector('.btn-excluir');
       btnExcluir.addEventListener('click', async () => {
