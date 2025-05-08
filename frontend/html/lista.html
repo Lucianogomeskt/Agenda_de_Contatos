@@ -9,13 +9,17 @@
   <script src="../js/lista.js" defer></script> 
 </head>
 <body>
-  <div class="container"> <!-- Usando a classe container para centralizar o conteúdo -->
+  <div class="container">
     <h1>Contatos Cadastrados</h1>
-    <div id="lista-contatos"> <!-- Lista onde os contatos serão exibidos -->
-      <!-- Os cards de contatos serão inseridos aqui dinamicamente com JavaScript -->
+
+    <input type="text" id="searchInput" placeholder="Pesquisar contato..." onkeyup="filtrarContatos()" 
+           style="margin-bottom: 20px; padding: 10px; width: 100%; max-width: 400px; border-radius: 5px; border: none;">
+
+    <div id="lista-contatos">
+      
     </div>
 
-    <!-- Botão de Voltar -->
+  
     <a href="agenda.html" id="voltar">Voltar para a página inicial</a>
   </div>
 </body>

@@ -26,8 +26,8 @@ fetch('http://localhost:3000/usuarios')
         <p><strong>Telefone:</strong> ${usuario.phone}</p>
         <a href="editar.html?id=${usuario.id}" style="color: white; margin-right: 10px;">Editar</a>
         <button class="btn-excluir" data-id="${usuario.id}" style="background-color: red; color: white;">Excluir</button>
-      `;
-
+ `;
+ 
       // Botão de excluir com confirmação
       const btnExcluir = card.querySelector('.btn-excluir');
       btnExcluir.addEventListener('click', async () => {
@@ -43,7 +43,7 @@ fetch('http://localhost:3000/usuarios')
             }
 
             alert('Contato excluído com sucesso!');
-            card.remove(); // Remove o contato sem recarregar a página
+            location.reload(); // Atualiza a página para remover da lista
           } catch (error) {
             console.error('Erro ao excluir:', error);
             alert('Erro ao excluir o contato.');
@@ -58,3 +58,14 @@ fetch('http://localhost:3000/usuarios')
     console.error('Erro ao carregar usuários:', error);
     container.innerHTML = `<p style="color:red;">Erro ao carregar contatos. Tente novamente mais tarde.</p>`;
   });
+
+// 👇 Função de filtro (coloque no final do arquivo)
+function filtrarContatos() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const contatos = document.querySelectorAll(".contato-card");
+
+  contatos.forEach(card => {
+    const nome = card.querySelector("h3")?.textContent.toLowerCase() || "";
+    card.style.display = nome.startsWith(input) ? "block" : "none";
+  });
+}
