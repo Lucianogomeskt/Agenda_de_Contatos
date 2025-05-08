@@ -59,7 +59,7 @@ fetch('http://localhost:3000/usuarios')
     container.innerHTML = `<p style="color:red;">Erro ao carregar contatos. Tente novamente mais tarde.</p>`;
   });
 
-// 👇 Função de filtro (coloque no final do arquivo)
+//  Função de filtro (coloque no final do arquivo)
 function filtrarContatos() {
   const input = document.getElementById("searchInput").value.toLowerCase();
   const contatos = document.querySelectorAll(".contato-card");
